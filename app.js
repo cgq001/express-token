@@ -1,3 +1,4 @@
+
 const express = require('express')
 const app = express()
 const path = require('path')
@@ -18,6 +19,9 @@ app.use(cors());
 const index = require('./router/index')
 app.use('/index',index)
 
+// 引入index路由文件
+const nottoken = require('./router/nottoken')
+app.use('/nottoken',nottoken)
 
 const port = process.env.PORT || 5005
 

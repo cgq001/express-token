@@ -1,6 +1,12 @@
+
+// 含Token 路由
 const express = require('express');
 const jwt = require('jsonwebtoken')
 const Routers = express.Router();
+
+//数据库配置
+const fn = require('../model/user')
+
 
 const { secretKey } =require('../token/constant')
 // 全局验证Token是否合法
@@ -31,6 +37,12 @@ Routers.get('/', (req,res) => {
             username: '这是首页'
         }
     })
+
+    /**
+    * 数据库操作
+    * fn.loadUser(req.body.email)
+    *    .then(ideas=>{})
+    */ 
 })
 
 // 登陆并生成token

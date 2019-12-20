@@ -10,7 +10,7 @@ cnpm install
 
 ###  启动
 ```
-nodemon app.js
+nodemon index.js
 ```
 ###  Token说明
 #### 1.token过期时的err值：
