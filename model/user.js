@@ -3,7 +3,7 @@ const db= require('../config/db')
 
 const fn={
 
-	//注册用户
+	//注册用户  无返回值
    addUser: async function(data){
 			let sql ="insert into user(username,password,email) values(?,?,?)"
 			let arr =[]
@@ -29,7 +29,7 @@ const fn={
         })
 		// return await db.query(sql,arr)
 	},
-	// 获取好友列表
+	// 获取好友列表  有返回值
 	getUserlist:async function(id){
 		let sql ="select a.*, b.*,a.id as user_id from contacts a inner join user b on a.userlistid = b.id where userid=?"
 		let arr=[]
